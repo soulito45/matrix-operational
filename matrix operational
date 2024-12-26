@@ -1,7 +1,6 @@
 import numpy as np
 
 def get_matrix(prompt):
-    """Prompts the user to input a matrix."""
     print(prompt)
     rows = int(input("Enter the number of rows: "))
     cols = int(input("Enter the number of columns: "))
@@ -14,13 +13,9 @@ def get_matrix(prompt):
             return get_matrix(prompt)
         matrix.append(row)
     return np.array(matrix)
-
 def display_matrix(matrix, label="Matrix"):
-    """Displays the matrix in a structured format."""
     print(f"\n{label}:\n{matrix}\n")
-
 def matrix_addition():
-    """Performs matrix addition."""
     print("Matrix Addition")
     A = get_matrix("Enter the first matrix:")
     B = get_matrix("Enter the second matrix:")
@@ -29,9 +24,7 @@ def matrix_addition():
         return
     result = A + B
     display_matrix(result, "Result")
-
 def matrix_subtraction():
-    """Performs matrix subtraction."""
     print("Matrix Subtraction")
     A = get_matrix("Enter the first matrix:")
     B = get_matrix("Enter the second matrix:")
@@ -40,9 +33,7 @@ def matrix_subtraction():
         return
     result = A - B
     display_matrix(result, "Result")
-
 def matrix_multiplication():
-    """Performs matrix multiplication."""
     print("Matrix Multiplication")
     A = get_matrix("Enter the first matrix:")
     B = get_matrix("Enter the second matrix:")
@@ -51,16 +42,12 @@ def matrix_multiplication():
         return
     result = np.dot(A, B)
     display_matrix(result, "Result")
-
 def matrix_transpose():
-    """Calculates the transpose of a matrix."""
     print("Matrix Transpose")
     A = get_matrix("Enter the matrix:")
     result = A.T
     display_matrix(result, "Transpose")
-
 def matrix_determinant():
-    """Calculates the determinant of a square matrix."""
     print("Matrix Determinant")
     A = get_matrix("Enter the square matrix:")
     if A.shape[0] != A.shape[1]:
@@ -68,9 +55,7 @@ def matrix_determinant():
         return
     result = np.linalg.det(A)
     print(f"\nDeterminant: {result:.2f}\n")
-
 def main():
-    """Main menu for the Matrix Operations Tool."""
     while True:
         print("""
 Matrix Operations Tool:
